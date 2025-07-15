@@ -9,6 +9,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʟᴏᴄᴀʟ ʜᴏsᴛ/ ᴠᴘs 」─
 </h3>
 
+- Sample Bot [Yt Music Bot](https://t.me/YtMusic_ZBot)
 - Get your [Variables](https://github.com/elzahraku/YoutubeMusic/blob/master/sample.env)
 - Get your [Cookies](https://github.com/elzahraku/YoutubeMusic/blob/master/zoi_cook.txt)
 - Upgrade and Update by :
