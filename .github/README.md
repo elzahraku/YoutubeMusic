@@ -9,7 +9,8 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʟᴏᴄᴀʟ ʜᴏsᴛ/ ᴠᴘs 」─
 </h3>
 
-- Get your [Necessary Variables](https://github.com/elzahraku/YoutubeMusic/blob/master/sample.env)
+- Get your [Variables](https://github.com/elzahraku/YoutubeMusic/blob/master/sample.env)
+- Get your [Cookies](https://github.com/elzahraku/YoutubeMusic/blob/master/zoi_cook.txt)
 - Upgrade and Update by :
 `sudo apt-get update && sudo apt-get upgrade -y`
 - Install Ffmpeg by :
