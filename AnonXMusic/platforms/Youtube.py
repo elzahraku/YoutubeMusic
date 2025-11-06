@@ -11,7 +11,11 @@ from youtubesearchpython.__future__ import VideosSearch
 from AnonXMusic.utils.database import is_on_off
 from AnonXMusic.utils.formatters import time_to_seconds
 
-mycookies = "zoi_cook.txt"
+# Ambil mycookies dari config.py jika tersedia, jika tidak gunakan fallback
+try:
+    from config import mycookies  # harap definisikan `mycookies` di config.py
+except Exception:
+    mycookies = "zoi_cook.txt"
 
 async def shell_cmd(cmd):
     proc = await asyncio.create_subprocess_shell(
@@ -124,7 +128,7 @@ class YouTubeAPI:
             "yt-dlp",
             "-g",
             "--cookies",
-            "zoi_cook.txt",
+            mycookies,
             "-f",
             "best[height<=?720][width<=?1280]",
             "--extractor-args",
@@ -145,7 +149,7 @@ class YouTubeAPI:
         if "&" in link:
             link = link.split("&")[0]
         playlist = await shell_cmd(
-            f"yt-dlp --cookies zoi_cook.txt --extractor-args 'youtube:player_client=default,web_safari;player_js_version=actual' -i --get-id --flat-playlist --playlist-end {limit} --skip-download {link}"
+            f"yt-dlp --cookies {mycookies} --extractor-args 'youtube:player_client=default,web_safari;player_js_version=actual' -i --get-id --flat-playlist --playlist-end {limit} --skip-download {link}"
         )
         try:
             result = playlist.split("\n")
@@ -369,7 +373,7 @@ class YouTubeAPI:
                 proc = await asyncio.create_subprocess_exec(
                     "yt-dlp",
                     "--cookies",
-                    "zoi_cook.txt",
+                    mycookies,
                     "-g",
                     "-f",
                     "best[height<=?720][width<=?1280]",
