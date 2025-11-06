@@ -24,7 +24,7 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
 spam_chats = []
 
-@client.on(events.NewMessage(pattern="^/colek|@jambak|/tarik ?(.*)"))
+@client.on(events.NewMessage(pattern="^/all|@tagall|/utag ?(.*)"))
 async def mentionall(event):
     chat_id = event.chat_id
     if event.is_private:
